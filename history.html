@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width" />
+    <title>匠悟のレーダーチャート</title>
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nikukyu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+  </head>
+  <body onload="start()">
+    <section class="wrapper">
+
+    <!-- Header -->
+    <header>
+      <div class="header-title">
+        <span>レ</span><span>ー</span><span>ダ</span><span>ー</span>
+        <span>チャート</span>
+      </div>
+      <ul class="header-navi">
+        <a href="./index.html"><li class="header-navi-list">HighSchool</li></a>
+        <a href="./history.html"><li class="header-navi-list">History</li></a>
+        <a href="#"><li class="header-navi-list">Topic</li></a>
+      </ul>
+      <div class="header-icon"></div>
+    </header>
+
+    <!-- Contents -->
+    <div class="grid">
+
+      <!-- RadarChar1 -->
+      <span class="chart-wrap">
+        <div class="radar-chart"><canvas id="radar-chart1"></canvas></div>
+		<table class="chart-table" id="chart-table1"></table>
+      </span>
+      <!-- RadarChar2 -->
+      <span class="chart-wrap">
+        <div class="radar-chart"><canvas id="radar-chart2"></canvas></div>
+        <table class="chart-table" id="chart-table2"></table>
+      </span>
+      <!-- RadarChar3 -->
+      <span class="chart-wrap">
+        <div class="radar-chart"><canvas id="radar-chart3"></canvas></div>
+        <table class="chart-table" id="chart-table3"></table>
+      </span>
+
+    </div>
+	<!-- -->
+    <div class="grid2">
+      <table class="infomation">
+        <tr><th>浜松工業高校</th></tr>
+        <tr><td>52</td></tr>
+      </table>
+      <table class="infomation">
+        <tr><th>浜松城北工業高校</th></tr>
+        <tr><td>47</td></tr>
+      </table>
+      <table class="infomation">
+        <tr><th>浜松湖北高校</th></tr>
+        <tr><td>42</td></tr>
+      </table>
+      <table class="infomation">
+        <tr><th>天竜高等学校</th></tr>
+        <tr><td>41</td></tr>
+      </table>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-infomation">
+        <span>チャートは www.chartjs.org を使用、フォントは Google Fonts / Font Awesome v5.15.4 を使用</span><br><br>
+      </div>
+      <div class="footer-title">
+        <i class="fas fa-biohazard fa-beat faa-tada animated"></i>&nbsp;&nbsp;&copy; Y.Watanabe All rights reserved.
+        <i class="fas fa-spinner fa-pulse fa-fw fa-2x" style="color:#3a3" ></i>
+      </div>
+    </footer>
+
+    <!-- Java Script -->
+  　<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <script src="js/radarchart.js"></script>
+
+    </section>
+  </body>
+</html>

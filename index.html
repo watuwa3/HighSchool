@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width">
+    <title>浜松地域の工業高校</title>
+    <meta name="description" content="浜松地域の工業高校の一覧を表示">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nikukyu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+  </head>
+  <body onload="start()">
+    <section class="wrapper">
+
+    <!-- Header -->
+    <header>
+      <div class="header-title">
+        <span>グ</span><span>ー</span><span>グ</span><span>ル</span>
+        <span>マップ</span>
+      </div>
+      <ul class="header-navi">
+        <a href="./index.html"><li class="header-navi-list">HighSchool</li></a>
+        <a href="./history.html"><li class="header-navi-list">History</li></a>
+        <a href="#"><li class="header-navi-list">Topic</li></a>
+      </ul>
+      <div class="header-icon"></div>
+    </header>
+
+    <!-- Contents -->
+    <div class="contents">
+
+      <!-- Google Map -->
+      <div class="map-wrap">
+        <div id= "map" class="map"></div>
+      </div>
+
+      <!-- Side Navi -->
+      <div class="side-navi">
+          <h2 class="side-navi-title">学校情報</h2><hr>
+          <div id="side-navi-info" class="side-navi-info">
+          </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-infomation">
+        <span>地図は Google Map API を使用、フォントは Google Fonts / Font Awesome v5.15.4 を使用</span><br><br>
+      </div>
+      <div class="footer-title">
+        <i class="fas fa-biohazard fa-beat faa-tada animated"></i>&nbsp;&nbsp;&copy; Y.Watanabe All rights reserved.
+      </div>
+    </footer>
+
+    <!-- Java Script -->
+    <script src="./js/script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMcFWXYze_bCFE5gcbVV0QCXLkcqjDzf4&callback=initMap" async defer></script>
+    <!-- script src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script-->
+
+    </section>
+  </body>
+</html>

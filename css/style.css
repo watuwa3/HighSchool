@@ -1,0 +1,304 @@
+:root {
+	--abcdef: 1030px;
+	--tbsize: 800px;
+}
+
+/* HTML&CSSとWebデザイン実践講座 CHAPTER 1-7 */
+/* デフォルトCSSをリセットしよう（各ブラウザでスタイルをなるべく統一） */
+html {
+  font-family: 'Oswald', 'RocknRoll One', sans-serif;
+}
+
+/* === Container ============================================================ */
+.wrapper {
+    width: 100%;
+    height: 100%;
+    background: #deeaf8; /* 青 */
+    display: flex;
+    flex-flow: column;
+}
+@media (min-width: 1030px) {.wrapper {height: 100vh;}}
+
+/* === Header ================================================================ */
+/* HTML&CSSとWebデザイン実践講座 CHAPTER 2-4 */
+/* Webフォントの使用（GoogleFontsサイトの肉球フォントを使用） */
+header {
+    width: 100%;
+    background: #000;
+}
+.header-title {
+    font-size: 14px;
+    line-height: 30px;
+    float: left;
+    font-family: 'Nikukyu';
+    color: #EA4335;
+    margin: 0;
+}
+.header-title span:nth-child(1) { color: #4285F4; }
+.header-title span:nth-child(2) { color: #EA4335; }
+.header-title span:nth-child(3) { color: #FBBC05; }
+.header-title span:nth-child(4) { color: #4285F4; }
+.header-title span:nth-child(5) { color: #EA4335; }
+/* HTML&CSSとWebデザイン実践講座 CHAPTER 2-6 */
+/* レスポンシブWebへの挑戦 (スマホ⇔PCでスタイルを切り替える下準備) */
+@media (min-width: 800px) {.header-title {font-size: 20px; margin: 0px 20px;}}
+@media (min-width: 1030px) {.header-title {font-size: 20px; margin: 0px 90px 0px 60px;}}
+
+/* HTML&CSSとWebデザイン実践講座 CHAPTER 3-4 */
+/* ボタンの装飾 */
+.header-navi {
+    line-height: 30px;
+    margin-left: 30px;
+    float: left;
+}
+.header-navi-list {
+    text-align: center;
+    line-height: 20px;
+    margin: 0px 5px;
+    background: #555;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 0px 10px;
+    color: #fff;
+}
+@media (min-width: 800px) {.header-navi-list {width: 120px;}}
+@media (min-width: 1030px) {.header-navi-list {width: 150px;}}
+.header-navi li:hover {
+    background: #888;
+    color: #e33;
+}
+.header-icon {
+	padding: 5px 5px;
+	text-align: right;
+}
+.header-icon::after {
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	font-style: normal;
+	font-size: 20px;
+	color: #eee;
+	content: '\f3cd';/*mobile-alt*/
+}
+@media (min-width: 800px) {.header-icon::after {content: '\f3fa';}} /*tablet-alt*/
+@media (min-width: 1030px) {.header-icon {padding: 5px 30px;} .header-icon::after {content: '\f108';}} /*desktop*/
+
+/* === Contents ============================================================== */
+.contents {
+    clear: both;
+    flex: 1;
+}
+@media (min-width: 1030px) {
+    .contents {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction:row-reverse; /* PC時のみ順番を入れ替える */
+    }
+}
+
+/* === Google Map ============================================================ */
+/* Google Map */
+/* 参考サイト
+    APIの使い方
+      https://tips-web.net/howtouse-gmap-api/ 
+    複数マーカーと吹き出し
+      https://www.tam-tam.co.jp/tipsnote/javascript/post7755.html
+*/
+.map-wrap {
+    position: relative;
+    width: 100vw;
+    height: 80vh;
+}
+.map-wrap .map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 98%;
+    height: 100%;
+}
+/* Side Navi */
+.side-navi {
+    border:dashed 1px #999;
+    margin: 3px 5px;
+    background: #444;
+    color: #fff;
+}
+.side-navi table {
+	margin-left: 3px;
+	width: 98%;
+}
+.side-navi table th {
+	border: solid 0.5px #666;
+    font-size: 0.7rem;
+    width: 4rem;
+    color: #ccc;
+}
+.side-navi table td {
+	border: solid 0.5px #666;
+    font-size: 0.8rem;
+	text-align: left;
+}
+.side-navi table a {
+    color: #6d6;
+}
+.side-navi table a:hover {
+    font-size: 1.0rem;
+    font-weight: bold;
+    text-decoration: underline;
+}
+/* PC時 - 左右のレイアウトを調整 */
+@media (min-width: 1030px) {
+    .side-navi {
+        float:left;
+        width: 320px;
+        height: 90vh;
+		overflow-y: scroll;
+    }
+    .map-wrap {
+        float:left;
+        width: calc(100% - 320px);
+        height: 90vh;
+    }
+}
+
+/* Google Map マーカー情報の装飾（FontAwesomeのWebiconを使用) */
+/* 参考にしたサイト
+       https://tech-blog.rakus.co.jp/entry/20220127/fontawesome
+*/
+.map-wrap .map a {
+    color: #a68940;
+    text-decoration: underline;
+}
+.map-wrap .map a:hover {
+    color: #967930;
+    font-weight: bold;
+}
+.map-wrap .map a[target="_blank"]:after {
+    margin:0 3px 0 2px;
+    font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+    font-size:0.9em;
+    content: '\f35d';
+}
+
+/* === RadarChart ============================================================ */
+.grid {
+	/* border:dashed 1px #999; /* 領域確認用 */
+    display: grid;
+	margin: 0 auto 2vw;
+	gap: 2vw;
+	justify-content: center;
+    padding: 10px 0px 0px 0px;
+}
+.chart-wrap {
+	border: solod 1px #888;
+	border-radius: 3px;
+	width: 100%;
+	height: 100%;
+	background: #eee; /* 背景色（jsも修正の事） */
+	box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5); /* 影 */
+}
+.radar-chart {
+	width: 100%;
+	height: 75%;
+}
+.chart-table {
+	margin: auto;
+	text-align: right;
+}
+.chart-table th, td {
+	border: solid 1px #999;
+	text-align: right;
+	font-size: 0.8rem;
+	padding: 2px 5px;
+	font-size: 0.9rem;
+}
+.chart-table th {
+	font-weight: normal; /*normal/bold bolder/lighter*/
+}
+/* スマホのレイアウトを調整 */
+    .grid {
+		grid-template-columns: repeat(1, 100vw);
+		grid-template-rows: repeat(3, 100vw);
+	}
+/* タブレットのレイアウトを調整 */
+@media (min-width: 800px) {
+    .grid {
+		grid-template-columns: repeat(2, 48vw);
+		grid-template-rows: repeat(2, 48vw);
+	}
+	.chart-table th, td {
+		font-size: 0.8rem;
+		padding: 2px 5px;
+	}
+}
+/* PC時 - 左右のレイアウトを調整 */
+@media (min-width: 1030px) {
+    .grid {
+		height: 55vh;
+	    width: 92vw;
+		grid-template-columns: repeat(3, 29vw);
+		grid-template-rows: repeat(6, 50vh);
+    }
+	.chart-table th, td {
+		font-size: 0.75rem;
+		padding: 2px 5px;
+	}
+}
+
+/* === RadarChart2 =========================================================== */
+.grid2 {
+	/* border:dashed 1px #999; /* 領域確認用 */
+    display: grid;
+	margin: 0 auto 2vw;
+	gap: 2vw;
+	justify-content: center;
+	height: 30vh;
+    width: 92vw;
+	grid-template-columns: repeat(2, 40vw);
+	grid-template-rows: repeat(2, 10vh);
+}
+.infomation {
+	/* border:dashed 3px #999; /* 領域確認用 */
+	border: solod 1px #888;
+	border-radius: 5px;
+	width: 100%;
+	padding: 10px 20px;
+    margin: 10px auto;
+	background: #eee;
+	box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5); /* 影 */
+}
+.infomation th {
+	height: 30px;
+	border: solid 1px #ccc;
+	font-size: 1.25rem;
+	text-align: center;
+	vertical-align : middle;
+}
+.infomation td {
+	height: 35px;
+	border: solid 1px #ccc;
+	font-size: 2rem;
+	text-align: center;
+	vertical-align : middle;
+}
+/* PC時 - 左右のレイアウトを調整 */
+@media (min-width: 9030px) {.infomation {width: 25%; }}
+
+/* === Footer ================================================================ */
+/* HTML&CSSとWebデザイン実践講座 CHAPTER 3-4 */
+/* フッター情報の装飾 */
+footer {
+    clear: both;
+    text-align: center;
+    padding: 1px 0px 1px 0px;;
+    color: #fff;
+    background: #000;
+    font-size: 0.6rem;
+}
+@media (min-width:  800px) {footer {font-size: 0.6rem;}} /* Tablet */
+@media (min-width: 1030px) {footer {font-size: 0.6rem;}} /* PC */
+footer .footer-infomation span {
+    background-image: linear-gradient(transparent 60%, #944 50%);
+    padding-bottom: .05rem;
+}
